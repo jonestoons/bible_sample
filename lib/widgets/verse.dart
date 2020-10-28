@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Verse extends StatefulWidget {
-  const Verse({Key key}) : super(key: key);
-
   @override
   _VerseState createState() => _VerseState();
 }
@@ -27,18 +25,20 @@ class _VerseState extends State<Verse> {
         Center(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
-              'Jeh',
+            child: 
+            Text(
+              'data.getVerse.verse.details.reference',
               style: TextStyle(fontSize: 18.0, color: Colors.red),
             ),
           ),
         ),
+      
         Expanded(
           child: SingleChildScrollView(
             child: Container(
               child: Center(
                 child: Text(
-                  'Hey',
+                  'Kil',
                   style: TextStyle(fontSize: 20.0),
                 ),
               ),
@@ -46,6 +46,7 @@ class _VerseState extends State<Verse> {
             ),
           ),
         ),
+
         RaisedButton.icon(
           icon: Icon(Icons.refresh),
           label: Text('Randomize'),

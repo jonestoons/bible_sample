@@ -1,4 +1,16 @@
+class MainVerse {
+  final Verses verse;
 
+  MainVerse({
+    this.verse,
+  });
+
+  factory MainVerse.fromJson(Map<String, dynamic> json) {
+    return MainVerse(
+      verse: Verses.fromJson(json['verse']),
+    );
+  }
+}
 
 class Verses {
   final Details details;
@@ -11,7 +23,9 @@ class Verses {
 
   factory Verses.fromJson(Map<String, dynamic> json) {
     return Verses(
-        details: json['details'] as Details, notice: json['notice'] as String);
+      notice: json['notice'],
+      details: Details.fromJson(json['details']),
+    );
   }
 }
 
@@ -27,4 +41,13 @@ class Details {
     this.version,
     this.verseurl,
   });
+
+  factory Details.fromJson(Map<String, dynamic> parsedJson) {
+    return Details(
+      text: parsedJson['text'],
+      reference: parsedJson['reference'],
+      version: parsedJson['version'],
+      verseurl: parsedJson['verseurl'],
+    );
+  }
 }
