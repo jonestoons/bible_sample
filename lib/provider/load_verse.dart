@@ -13,7 +13,7 @@ class BibleVerses with ChangeNotifier {
   }
 
   Future<void> getVerses() async {
-    final url = 'https://beta.ourmanna.com/api/v1/get/?format=json';
+    final url = 'http://www.ourmanna.com/verses/api/get?format=text&order=random';
     try {
       final response = await http.get(url);
       var extractedData = json.decode(response.body) as Map<String, dynamic>;
